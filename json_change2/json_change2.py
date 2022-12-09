@@ -64,7 +64,7 @@ if key_for_change in keys:
                 print("Количество ключей и новых значений не равны.")
                 print("Присваивание не выполнено.")
 else:
-	choice = input("Такого ключа нет")
+	print("Такого ключа нет")
 
 # ------ CLOSE 3 FILES ---------
 file_after_pointer.close()
