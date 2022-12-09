@@ -20,9 +20,6 @@ key_for_change = input("Введите ключ: ")
 # open file1 for change
 file_before_pointer = open(file_before, mode='r', encoding='utf_8')
 
-# json to dict
-json_data = json.load(file_before_pointer)
-
 # open file2 with values for change
 file_with_new_values_pointer = open(file_with_new_values, mode='r', encoding='utf_8')
 
@@ -30,6 +27,9 @@ file_with_new_values_pointer = open(file_with_new_values, mode='r', encoding='ut
 file_after = 'file_after.json'
 file_after_pointer = open(file_after, mode='w', encoding='utf_8')
 # ------------------------------
+
+# json to dict
+json_data = json.load(file_before_pointer)
 
 list1 = [] # for json
 list2 = [] # for txt
@@ -54,7 +54,8 @@ if key_for_change in keys:
 		# change
                 for index, user in enumerate(json_data):
                         user[key_for_change] = list1[index]
-
+                
+                # dict to json
                 json.dump(json_data, file_after_pointer, ensure_ascii=False)
 
                 print("\nУспешно заменено!")
